@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: const Text('Fetch Weather'),
               ),
               SizedBox(height: 20,),
-              Text(weatherData)
+              Text(weatherData, style: const TextStyle(fontSize: 20))
             ],
           ),
         ),
