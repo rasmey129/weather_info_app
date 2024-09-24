@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'dart:math';
 void main() {
   runApp(const MyApp());
 }
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Weather app',
       theme: ThemeData(
         
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -34,8 +34,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
+  final TextEditingController controller = TextEditingController();
+  String weatherData = '';
   
+  void fetchWeather(){
+    final city = controller.text;
+     final random = Random();
+    final temp = 15 + random.nextInt(15);
+     final conditions = ['sunny', 'cloudy', 'rainy']; 
+    final condition = conditions[random.nextInt(3)];
+
+    setState(() {
+      weatherData = 'Weather in $city: $temp C, $condition';
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
