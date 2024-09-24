@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Weather App'),
     );
   }
 }
@@ -34,14 +34,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      
-      _counter++;
-    });
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -54,11 +48,30 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        
-        child: Column()
-         
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Enter a city',
+                ),
+              ),
+              const SizedBox(height: 20), 
+              ElevatedButton(
+                onPressed: () {
+                  
+                  
+                },
+                child: const Text('Fetch Weather'),
+              ),
+              Text("Placeholder")
+            ],
+          ),
+        ),
       ),
-      
     );
   }
 }
