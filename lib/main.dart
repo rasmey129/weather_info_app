@@ -66,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextField(
+                controller:controller,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'Enter a city',
@@ -73,13 +74,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const SizedBox(height: 20), 
               ElevatedButton(
-                onPressed: () {
-                  
-                  
-                },
+                onPressed: fetchWeather,
                 child: const Text('Fetch Weather'),
               ),
-              Text("Placeholder")
+              SizedBox(height: 20,),
+              Text(weatherData)
             ],
           ),
         ),
